@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 90px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  padding: 10px;
+}
+
+.logonav {
+  color: #fff;
+}
+
+.konten {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.isikonten {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.daftarradius {
+  border-radius: 20px;
+}
+
+.judulpage::before {
+  content: "|";
+  color: #feb930;
+  padding-right: 10px;
+}
+
+.judulpage {
+  color: #1e2f4d;
+}
+
+.judulkonten {
+  color: #1e2f4d;
+}
+
+.garis {
+  border-color: #feb930;
+  width: 100px;
+  border-width: 4px;
+}
+
+.bg-biru {
+  background: #1e2f4d;
+}
+
+.cardsendiri {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.fotopage {
+  width: 1000px;
+  height: 500px;
+  border-radius: 5px;
+}
+
+.carousel-caption {
+  color: black;
+}
+
+/* Footer */
+.segment-one p,
+.segment-two p,
+.segment-three p,
+.segment-four p {
+  color: #999;
+  line-height: 25px;
+}
+
+.footer-top {
+  background: #1e2f4d;
+  padding: 50px 0;
+}
+
+.judulfooter {
+  color: #fff;
+}
+
+.segment-two {
+  text-transform: uppercase;
+}
+
+.segment-two h3:before {
+  content: "|";
+  color: #feb930;
+  padding-right: 10px;
+}
+
+.segment-two ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.segment-two ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  line-height: 40px;
+}
+
+.segment-two ul li a {
+  color: #999;
+  text-decoration: none;
+}
+
+.segment-three h3:before {
+  content: "|";
+  color: #feb930;
+  padding-right: 10px;
+}
+
+.segment-three a {
+  background: #345792;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.segment-three a i {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 12px;
+}
+
+.segment-four a i {
+  color: grey;
+}
+
+.segment-four h3:before {
+  content: "|";
+  color: #feb930;
+  padding-right: 10px;
+}
+
+.segment-four form input[type="submit"] {
+  background: #feb930;
+  border: none;
+  padding: 3px 15px;
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  background: #141f33;
+}
+
+.footer-bottom-text {
+  margin-top: 15px;
+  color: #fff;
+}

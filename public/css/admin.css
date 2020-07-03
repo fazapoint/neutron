@@ -1,0 +1,80 @@
+#wrapper {
+  overflow-x: hidden;
+}
+
+.bg-ijo {
+  background-color: #89c9b8;
+}
+
+.bg-ijo1 {
+  background: #e1ffc2;
+}
+
+.bg-oren {
+  background: #feb930;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+.cardsendiri {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.judulkonten {
+  color: #1e2f4d;
+}
+
+.hurufbiru {
+  color: #1e2f4d;
+}
+
+.list-group-item {
+  color: white;
+  padding: 25px;
+}
+
+.fa-sign-out-alt {
+  color: #fff;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.bg-biru {
+  background: #1e2f4d;
+}
