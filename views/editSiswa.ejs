@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="icon" type="png" href=" img/logo.png">
+    <link rel="stylesheet" href=" css/generalstyle.css" />
+    <link rel="stylesheet" href=" fontawesome-free-5.13.1-web/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <!-- Ini Main Content -->
+    <main>
+        <section class="section">
+            <div class="container card mb-5 daftarradius">
+                <h2 class="alert alert-primary text-center mt-3">Edit Pendaftaran</h2>
+                <form class="p-4" action="/updateSiswa" method="POST">
+                    <input type="hidden" value="<%= siswa.id %>" name="id">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input id="nama" type="text" value="<%= siswa.nama %>" name="nama" class="form-control"
+                                    placeholder="Masukkan nama lengkap anda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="<%= siswa.email %>" name="email"
+                                    class="form-control" placeholder="Masukkan email anda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Pilih Paket</label>
+                                <select class="form-control" value="<%= siswa.paket %>" name="paket" id="">
+                                    <option value="SD">SD</option>
+                                    <option value="SMP">SMP</option>
+                                    <option value="SMA">SMA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Kelas</label>
+                                <select class="form-control" value="<%= siswa.kelas %>" name="kelas" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="tempat_lahir">Asal Sekolah</label>
+                                <input id="asal_sekolah" type="text" value="<%= siswa.sekolah %>" name="sekolah"
+                                    class="form-control" placeholder="Masukkan asal sekolah anda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-right">
+                            <button type="reset" class="btn btn-outline-danger">RESET</button>
+                            <button type="submit" class="btn btn-outline-primary">UPDATE</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

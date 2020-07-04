@@ -80,7 +80,8 @@
                         <h3 class="judulsection mt-4">Nadiem Makarim</h3>
                     </div>
                     <div class="col-md-7">
-                        <p class="isikonten"><span class="quote">&#8220;</span>Assalamu’alaikum wr. wb.
+                        <span class="quote">&#8220;</span>
+                        <p class="isikonten">Assalamu’alaikum wr. wb.
 
                             Pada tahun 2045 merupakan target generasi emas yaitu generasi yang saat ini sedang mengenyam
                             pendidikan dan diharapkan akan meraih kesuksesan di tahun 2045. Oleh karena itu perlu adanya
@@ -93,8 +94,9 @@
                             sebagainya. Oleh karena itu pendidikan di Neutron Yogyakarta harus mampu menumbuhkan
                             perilaku positif dan akhlak mulia,
                             sehingga mampu memberikan jawaban dan solusi terhadap krisis karakter yang terjadi saat ini.
-                            <span class="quote">&#8220;</span>
+
                         </p>
+                        <span class="quote">&#8220;</span>
                     </div>
                 </div>
             </div>
@@ -343,17 +345,19 @@
                             Yogyakarta</h5>
                         <h5 class="mb-4"><i class="mr-5 fas fa-2x fa-phone-square"></i>0274-223415</h5>
                         <h5><i class="mr-5 fas fa-2x fa-fax"></i>0274-3112876</h5>
-                        <form action="" class="mt-5">
+                        <form action="/send" method="POST" class="mt-5">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="inputName" placeholder="Nama">
+                                    <input type="text" class="form-control" name="nama" id="inputName"
+                                        placeholder="Nama">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <input type="email" class="form-control" name="email" id="inputEmail"
+                                        placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="inputTextArea" rows="3"
+                                <textarea class="form-control" name="isiPesan" id="inputTextArea" rows="3"
                                     placeholder="Masukkan Pesan Anda"></textarea>
                             </div>
                             <button type="submit" class="btn btn-outline-primary">Kirim</button>

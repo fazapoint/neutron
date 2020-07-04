@@ -28,8 +28,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(public));
 
-
-
+//NAVIGASI
+//NAVIGASI
 // INI UNTUK HALAMAN UTAMA
 app.get('/', (req, res) => {
     res.render('index', {
@@ -39,6 +39,12 @@ app.get('/', (req, res) => {
 //INI UNTUK PENDAFTARAN
 app.get('/pendaftaran', (req, res) => {
     res.render('pendaftaran', {
+    });
+});
+
+//INI UNTUK SUKSES DAFTAR
+app.get('/sukses', (req, res) => {
+    res.render('sukses', {
     });
 });
 
@@ -108,80 +114,146 @@ app.get('/adminKontak', (req, res) => {
     });
 });
 
-//INI UNTUK ADMIN SISWA
+//INI UNTUK EDIT SISWA
+app.get('/editSiswa', (req, res) => {
+    res.render('editSiswa', {
+    });
+});
+
+//INI UNTUK PENDAFTARAN SISWA
+app.get('/pendaftaranSiswa', (req, res) => {
+    res.render('pendaftaranSiswa', {
+    });
+});
+
+
+
+//NAVIGASI END
+//NAVIGASI END
+
+
+//FUNGSI DATA SISWA
+//FUNGSI DATA SISWA
+//MEMBUKA HALAMAN ADMIN SISWA
 app.get('/adminSiswa', (req, res) => {
-    res.render('adminSiswa', {
-    });
-});
-
-//INI UNTUK ADMIN PESAN
-app.get('/adminPesan', (req, res) => {
-    res.render('adminPesan', {
-    });
-});
-
-
-
-
-/*app.get('/', (req, res) => {
     // res.send('CRUD Operation using NodeJS / ExpressJS / MySQL');
-    let sql = "SELECT * FROM users";
+    let sql = "SELECT * FROM siswas";
     let query = connection.query(sql, (err, rows) => {
         if (err) throw err;
-        res.render('user_index', {
+        res.render('adminSiswa', {
             title: 'CRUD Operation using NodeJS / ExpressJS / MySQL',
-            users: rows
+            siswas: rows
         });
-    });
-});*/
-
-
-app.get('/add', (req, res) => {
-    res.render('user_add', {
-        title: 'CRUD Operation using NodeJS / ExpressJS / MySQL'
     });
 });
 
-app.post('/save', (req, res) => {
-    let data = { name: req.body.name, email: req.body.email, phone_no: req.body.phone_no };
-    let sql = "INSERT INTO users SET ?";
+//MENYIMPAN FORM PENDAFTARAN DARI ClIENT PAGE
+app.post('/saveSiswa', (req, res) => {
+    let data = { nama: req.body.nama, email: req.body.email, paket: req.body.paket, kelas: req.body.kelas, sekolah: req.body.sekolah };
+    let sql = "INSERT INTO siswas SET ?";
     let query = connection.query(sql, data, (err, results) => {
         if (err) throw err;
-        res.redirect('/');
+        res.redirect('/sukses');
     });
 });
 
-app.get('/edit/:userId', (req, res) => {
+//MENYIMPAN FORM PENDAFTARAN DARI ADMIN PAGE
+app.post('/saveSiswaAdmin', (req, res) => {
+    let data = { nama: req.body.nama, email: req.body.email, paket: req.body.paket, kelas: req.body.kelas, sekolah: req.body.sekolah };
+    let sql = "INSERT INTO siswas SET ?";
+    let query = connection.query(sql, data, (err, results) => {
+        if (err) throw err;
+        res.redirect('/adminSiswa');
+    });
+});
+
+//MENGHAPUS DATA SISWA
+app.get('/deleteSiswa/:userId', (req, res) => {
     const userId = req.params.userId;
-    let sql = `Select * from users where id = ${userId}`;
+    let sql = `DELETE from siswas where id = ${userId}`;
     let query = connection.query(sql, (err, result) => {
         if (err) throw err;
-        res.render('user_edit', {
+        res.redirect('/adminSiswa');
+    });
+});
+
+//MEMBUKA PAGE EDIT SISWA
+app.get('/editSiswa/:userId', (req, res) => {
+    const userId = req.params.userId;
+    let sql = `Select * from siswas where id = ${userId}`;
+    let query = connection.query(sql, (err, result) => {
+        if (err) throw err;
+        res.render('editSiswa', {
             title: 'CRUD Operation using NodeJS / ExpressJS / MySQL',
-            user: result[0]
+            siswa: result[0]
         });
     });
 });
 
-
-app.post('/update', (req, res) => {
+//MENGUPDATE DATA SISWA
+app.post('/updateSiswa', (req, res) => {
     const userId = req.body.id;
-    let sql = "update users SET name='" + req.body.name + "',  email='" + req.body.email + "',  phone_no='" + req.body.phone_no + "' where id =" + userId;
+    let sql = "update siswas SET nama='" + req.body.nama + "',  email='" + req.body.email + "',  paket='" + req.body.paket + "', kelas='" + req.body.kelas + "', sekolah='" + req.body.sekolah + "' where id =" + userId;
     let query = connection.query(sql, (err, results) => {
         if (err) throw err;
-        res.redirect('/');
+        res.redirect('/adminSiswa');
     });
 });
 
+//FUNGSI DATA SISWA END
+//FUNGSI DATA SISWA END
 
-app.get('/delete/:userId', (req, res) => {
+
+//FUNGSI PESAN
+//FUNGSI PESAN
+//TAMBAH PESAN
+//INI UNTUK MEMBUKA ADMIN PESAN
+app.get('/adminPesan', (req, res) => {
+    // res.send('CRUD Operation using NodeJS / ExpressJS / MySQL');
+    let sql = "SELECT * FROM pesans";
+    let query = connection.query(sql, (err, rows) => {
+        if (err) throw err;
+        res.render('adminPesan', {
+            title: 'CRUD Operation using NodeJS / ExpressJS / MySQL',
+            pesans: rows
+        });
+    });
+});
+
+//MENYIMPAN FORM PESAN DARI HUBUNGI KAMI
+app.post('/send', (req, res) => {
+    let data = { nama: req.body.nama, email: req.body.email, isiPesan: req.body.isiPesan };
+    let sql = "INSERT INTO pesans SET ?";
+    let query = connection.query(sql, data, (err, results) => {
+        if (err) throw err;
+        res.redirect('/#sechubungikami');
+    });
+});
+
+//MENGHAPUS PESAN
+app.get('/deletePesan/:userId', (req, res) => {
     const userId = req.params.userId;
-    let sql = `DELETE from users where id = ${userId}`;
+    let sql = `DELETE from pesans where id = ${userId}`;
     let query = connection.query(sql, (err, result) => {
         if (err) throw err;
-        res.redirect('/');
+        res.redirect('/adminPesan');
     });
 });
+
+
+
+//FUNGSI PESAN END
+//FUNGSI PESAN END
+
+
+
+
+
+
+
+
+
+
 
 
 // Server Listening

@@ -182,20 +182,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% pesans.forEach(function(pesan){ %>
                         <tr>
-                            <td>Andi</td>
-                            <td>andi@gmail.com</td>
-                            <td>Kerja bagus</td>
-                            <td><a href="#"><i class="fas fa-trash-alt bg-danger p-2 text-white rounded"
-                                        title="Hapus"></i></a></td>
+                            <td><%= pesan.nama %></td>
+                            <td><%= pesan.email %></td>
+                            <td><%= pesan.isiPesan %></td>
+                            <td>
+                                <a href="deletePesan/<%= pesan.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>Andi</td>
-                            <td>andi@gmail.com</td>
-                            <td>Kerja bagus</td>
-                            <td><a href="#"><i class="fas fa-trash-alt bg-danger p-2 text-white rounded"
-                                        title="Hapus"></i></a></td>
-                        </tr>
+                        <% }); %>
                     </tbody>
                 </table>
                 <!-- /.container-fluid -->

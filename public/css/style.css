@@ -85,7 +85,7 @@ a.custom-card:hover {
 }
 
 #secpaket {
-  background-image: url(../img/produk.jpg);
+  background-image: url(../img/backgroundoren-min.JPG);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -95,7 +95,7 @@ a.custom-card:hover {
 }
 
 #secvideo {
-  background: url("../img/produk.jpg");
+  background: url("../img/backgroundoren-min.JPG");
   background-size: cover;
   background-attachment: fixed;
 }

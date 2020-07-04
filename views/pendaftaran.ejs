@@ -58,12 +58,12 @@
         <section class="section">
             <div class="container card mb-5 daftarradius">
                 <h2 class="alert alert-primary text-center mt-3">Formulir Pendaftaran</h2>
-                <form class="p-4" action="">
+                <form class="p-4" action="/saveSiswa" method="POST">
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label for="nama">Nama Lengkap</label>
-                                <input id="nama" type="text" name="" class="form-control"
+                                <input id="nama" type="text" name="nama" class="form-control"
                                     placeholder="Masukkan nama lengkap anda">
                             </div>
                         </div>
@@ -72,7 +72,8 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" placeholder="Masukkan email anda">
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="Masukkan email anda">
                             </div>
                         </div>
                     </div>
@@ -80,23 +81,23 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Pilih Paket</label>
-                                <select class="form-control" name="" id="">
-                                    <option value="">SD</option>
-                                    <option value="">SMP</option>
-                                    <option value="">SMA</option>
+                                <select class="form-control" name="paket" id="">
+                                    <option value="SD">SD</option>
+                                    <option value="SMP">SMP</option>
+                                    <option value="SMA">SMA</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Kelas</label>
-                                <select class="form-control" name="" id="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
+                                <select class="form-control" name="kelas" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
                                 </select>
                             </div>
                         </div>
@@ -105,7 +106,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="tempat_lahir">Asal Sekolah</label>
-                                <input id="asal_sekolah" type="text" name="" class="form-control"
+                                <input id="asal_sekolah" type="text" name="sekolah" class="form-control"
                                     placeholder="Masukkan asal sekolah anda">
                             </div>
                         </div>
